@@ -1,34 +1,34 @@
 <?php
 
-class Categoria
+class Category
 {
-    private $nome;
-    private static $categorieValide = array("Cane", "Gatto", "Uccelli", "Pesci");
-    private $errore;
+    private $name;
+    private static $validCategories = array("Dog", "Cat", "Birds", "Fish");
+    private $error;
 
-    public function __construct($nome)
+    public function __construct($name)
     {
-        if ($this->isValidCategoria($nome)) {
-            $this->nome = $nome;
+        if ($this->isValidCategory($name)) {
+            $this->name = $name;
         } else {
-            $this->errore = "Categoria non valida.";
-            $this->nome = null;
+            $this->error = "Invalid category.";
+            $this->name = null;
         }
     }
 
-    private function isValidCategoria($categoria)
+    private function isValidCategory($category)
     {
-        return in_array($categoria, self::$categorieValide);
+        return in_array($category, self::$validCategories);
     }
 
-    public function getNome()
+    public function getName()
     {
-        return $this->nome;
+        return $this->name;
     }
 
-    public function getErrore()
+    public function getError()
     {
-        return $this->errore;
+        return $this->error;
     }
 }
 
